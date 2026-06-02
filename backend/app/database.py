@@ -3,13 +3,17 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 import os
+import urllib.parse
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+PGUSER = os.getenv("PGUSER", "postgres")
+PGPASSWORD = urllib.parse.quote_plus(os.getenv("PGPASSWORD", ""))
+PGHOST = os.getenv("PGHOST", "localhost")
+PGPORT = os.getenv("PGPORT", "5432")
+PGDATABASE = os.getenv("PGDATABASE", "railway")
 
-if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+DATABASE_URL = f"postgresql://{PGUSER}:{PGPASSWORD}@{PGHOST}:{PGPORT}/{PGDATABASE}"
 
 engine = create_engine(
     DATABASE_URL,
