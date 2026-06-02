@@ -7,18 +7,12 @@ import urllib.parse
 
 load_dotenv()
 
-PGUSER = os.getenv("PGUSER", "postgres")
-PGPASSWORD = urllib.parse.quote_plus(os.getenv("PGPASSWORD", ""))
-PGHOST = os.getenv("PGHOST", "localhost")
-PGPORT = os.getenv("PGPORT", "5432")
-PGDATABASE = os.getenv("PGDATABASE", "railway")
+DATABASE_URL = os.getenv("DATABASE_URL", "")
 
-DATABASE_URL = f"postgresql://{PGUSER}:{PGPASSWORD}@{PGHOST}:{PGPORT}/{PGDATABASE}"
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"sslmode": "require"}
-)
+engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
