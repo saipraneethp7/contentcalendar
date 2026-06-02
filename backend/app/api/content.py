@@ -87,7 +87,7 @@ def generate_content(request: GenerateContentRequest, authorization: str = Heade
     Return only the JSON array, no explanation, no markdown, no extra text.
     """
     response = client.chat.completions.create(
-        model="llama3-70b-8192",
+        model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}],
         max_tokens=4000
     )
