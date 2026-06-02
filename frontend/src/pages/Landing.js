@@ -36,15 +36,13 @@ const features = [
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-dark-900">
-      <div className="max-w-6xl mx-auto px-6">
+    <div className="min-h-screen bg-dark-900 relative overflow-hidden">
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[900px] h-[600px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute left-1/4 top-40 w-[500px] h-[400px] bg-orange-600/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="pt-24 pb-20 text-center relative">
-          <div className="absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
-            <div className="absolute left-1/3 top-20 w-[400px] h-[300px] bg-orange-600/10 rounded-full blur-[100px]" />
-          </div>
+      <div className="max-w-6xl mx-auto px-6 relative">
 
+        <div className="pt-24 pb-20 text-center">
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-medium px-4 py-2 rounded-full mb-8">
             <span>✍️</span> AI-Powered Social Media Management
           </div>
@@ -72,7 +70,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="bg-dark-700 border border-dark-600 rounded-2xl p-8 mb-24">
+        <div className="bg-dark-700/80 backdrop-blur border border-dark-600 rounded-2xl p-8 mb-24">
           <div className="grid grid-cols-3 gap-4 mb-6">
             {['Instagram', 'Twitter', 'LinkedIn'].map(platform => (
               <div key={platform} className="bg-dark-800 border border-dark-600 rounded-xl p-4">
@@ -105,7 +103,7 @@ const Landing = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((feature) => (
-              <div key={feature.title} className="bg-dark-700 border border-dark-600 hover:border-primary/30 rounded-xl p-6 transition-all">
+              <div key={feature.title} className="bg-dark-700/80 backdrop-blur border border-dark-600 hover:border-primary/30 rounded-xl p-6 transition-all">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-xl">
                   {feature.icon}
                 </div>
@@ -116,7 +114,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="text-center bg-dark-700 border border-dark-600 rounded-2xl p-16 mb-24">
+        <div className="text-center bg-dark-700/80 backdrop-blur border border-dark-600 rounded-2xl p-16 mb-24">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to save hours every week?</h2>
           <p className="text-gray-500 text-sm mb-8 max-w-md mx-auto">
             Join hundreds of small businesses already using Craftly to stay consistent on social media.
