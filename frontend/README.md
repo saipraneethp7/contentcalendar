@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Craftly — AI Content Calendar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Craftly is a full stack SaaS application that generates 30 days of AI-powered social media content tailored to your business's industry, audience and tone.
 
-## Available Scripts
+## Live Demo
+https://craftlyapp.netlify.app
 
-In the project directory, you can run:
+## Features
+- JWT authentication with secure password hashing
+- Business profile setup with industry, audience, tone and platform selection
+- AI-powered 30 day content calendar generation using Groq API
+- Visual calendar dashboard with post type and platform color coding
+- Edit, delete and mark posts as published
+- Monthly content history stored in PostgreSQL
+- Analytics showing total, published and pending posts
 
-### `npm start`
+## Tech Stack
+**Frontend:** React, Tailwind CSS, Axios, React Router
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Backend:** FastAPI, SQLAlchemy, PostgreSQL, Neon
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**AI:** Groq API with LLaMA 3.3 70B
 
-### `npm test`
+**Deployment:** Railway (backend), Netlify (frontend)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Auth:** JWT tokens, bcrypt password hashing
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Environment Variables
+Create a `.env` file in the backend folder:
+DATABASE_URL=your_postgresql_url
+GROQ_API_KEY=your_groq_api_key
+SECRET_KEY=your_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshots
+Dashboard, calendar view and content generation all live at the demo link above.

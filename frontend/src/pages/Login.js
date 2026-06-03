@@ -26,9 +26,7 @@ const Login = () => {
     <div className="min-h-screen bg-dark-900 flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="w-12 h-12 rounded-xl bg-primary mx-auto mb-4 flex items-center justify-center">
-            <span className="text-white font-bold">CC</span>
-          </div>
+          <div className="text-5xl mb-4">✍️</div>
           <h1 className="text-2xl font-bold text-white mb-2">Welcome back</h1>
           <p className="text-gray-500 text-sm">Login to your Craftly account</p>
         </div>
@@ -60,7 +58,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-primary hover:bg-primary/90 disabled:bg-dark-600 disabled:text-gray-500 text-white font-medium py-3 rounded-lg transition-all text-sm"
+              className="w-full bg-primary hover:bg-primary-dark disabled:bg-dark-600 disabled:text-gray-500 text-white font-medium py-3 rounded-lg transition-all text-sm"
             >
               {loading ? 'Signing in...' : 'Sign in'}
             </button>
