@@ -5,7 +5,7 @@ from app.api import auth, users, content
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="ContentCalendar API", version="1.0.0")
+app = FastAPI(title="Craftly API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
