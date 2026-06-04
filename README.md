@@ -70,7 +70,10 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 | GET | /users/me | Get current user |
 | POST | /content/business-profile | Create business profile |
 | GET | /content/business-profile | Get business profile |
-| POST | /content/generate | Generate 30 days of content |
+| POST | /content/generate | Generate 30 days of content |<img width="1856" height="942" alt="Screenshot 2026-06-03 190315" src="https://github.com/user-attachments/assets/1e1ad881-5f07-442d-b19e-c9128238210c" />
+<img width="1859" height="923" alt="Screenshot 2026-06-03 190033" src="https://github.com/user-attachments/assets/4b4409e2-0709-4223-82e3-932ba8996673" />
+<img width="1888" height="942" alt="Screenshot 2026-06-03 185855" src="https://github.com/user-attachments/assets/8649a96f-89a8-4bdf-b946-2b8d40b1492c" />
+
 | GET | /content/posts/{id} | Get posts for a month |
 | PATCH | /content/posts/{id} | Update a post |
 | DELETE | /content/posts/{id} | Delete a post |
